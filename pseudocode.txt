@@ -1,0 +1,23 @@
+Need a page with a start button on it. This is to provide the user with a place to click to begin the overall quiz. This button needs to be connected to an event listener in the javascript that starts the game.
+
+Need a timer variable that is defined with a set amount of time at the start of the game to begin each player with the same initial score.
+
+Need to create an array with a set of questions that can be called upon by the quiz function and presented to the user for response. We also need to ensure that the answers to each question is an attribute tied to the question.
+
+Need to create a time interval that starts counting down by one for each second, after the start button is pressed.
+
+Within the time interval, need to include a loop that presents questions to the user until there are no more questions left in the question array.
+
+In this loop, the question is prompted to the user, the user answers, if the answer is correct, it moves to the next question. If the answer is wrong, the timer variable is decreased by a set number of points, and the next question is presented.
+
+The interval needs to stop when the timer variable reaches 0, or there are no more questions left in the array.
+
+When the interval ends, we need to display the remaining time left on the timer as a score for the user.
+
+As we display the score to the user, we need to display an input form where the user can enter their initials.
+
+Once they've entered their intials, we need to append the initials and score to a score list array, and then save that score list array to the local storage.
+
+Provide a link at the top of the page to allow the user to click on the score list, and this will return the list of the scores that have been saved into local storage.
+
+Create a clear scores and back buttons on the high scores page. The clear scores button would clear the local storage, while the back button would link back to the start page of the quiz.
