@@ -28,17 +28,20 @@
             <h2 >Question</h2>
             <h3 id="#question"></h3>
             <ol id="answerOptions" style = "margin-left: 33%; text-align: left;">
-                <li><button id="answerOption1" style = "text-align: left;"></button></li>
-                <li><button id="answerOption2" style = "text-align: left;"></button></li>
-                <li><button id="answerOption3" style = "text-align: left;"></button></li>
-                <li><button id="answerOption4" style = "text-align: left;"></button></li>
-            </ul>
+                <li><button id="answerOption1" style = "text-align: left;" value = "1"></button></li>
+                <li><button id="answerOption2" style = "text-align: left;" value = "2"></button></li>
+                <li><button id="answerOption3" style = "text-align: left;" value = "3"></button></li>
+                <li><button id="answerOption4" style = "text-align: left;" value = "4"></button></li>
+            </ol>
+            <hr>
+            <div id="right"></div>
+
 
         </section>
 
         <!-- Create a third container that can be shown at the end of the game to show the score, and allow user to enter initials and save score-->
 
-        <section style="text-align: center; display: float;" id = "#score-container">
+        <section style="text-align: center; display: none;" id = "#score-container">
             <!-- show the question as an h2 -->
             <h2 id="#head">Great Job!</h2>
             <h4 >Your final score was: <span id="finalScore"></span></h4>
