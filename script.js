@@ -1,15 +1,12 @@
 var timeShown = document.getElementById("#timeRemaining");
-var startBtn = document.getElementById("#startGame");
+var startBtn = document.querySelector("#startGame");
 var startDisplay = document.getElementById("#start-container")
 var questDisplay = document.getElementById("#question-container");
+var scoreDisplay = document.getElementById("score-container");
 var startTime = 100;
 var timeElapsed = 0;
 
 // Create list of questions
-var question list = [
-
-];
-
 
 // Create a function to contain and run the full quiz
 function startGame (event) {
@@ -25,8 +22,10 @@ function startGame (event) {
 
         // End game if time is 0
         if (timeLeft === 0){
-            
+            questDisplay.setAttribute("style", "text-align: center; display: none;");
+            scoreDisplay.setAttribute("style", "text-align: center; display: float;");
         }
+        
     }, 1000);
 }
 
