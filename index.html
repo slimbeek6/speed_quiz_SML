@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Quiz Game!</title>
 </head>
 <body>
     <!-- Create the link to the high scores page -->
-    <a href="./highscores.html">View High Scores</a>
+    <div id="goToHighScores" style="margin-left: 10%; margin-top: 1rem; font-size: large;">View High Scores</div>
 
     <!-- Create the timer that shows in the top right -->
-    <div id = "#timer" style="float: right;">There are: <span id ="#timeRemaining"></span> seconds left</div>
+    <div id = "#timer" style="float: right; margin-right: 10%; font-size: large;">There are: <span id ="#timeRemaining"></span> seconds left</div>
 
     <main class = "container">
 
@@ -46,11 +46,23 @@
             <h2 id="#head">Great Job!</h2>
             <h4 >Your final score was: <span id="finalScore"></span></h4>
             <input placeholder="Initials" id = "initialsInput" />
+            <button id = "submit-initials">Submit</button>
 
     
 
         </section>
 
+        <!-- Create a fourth container for the high scores list -->
+
+        <section style="text-align: center; display: none;" id="#score-list">
+            <h1 id = "#header">High Scores</h1>
+            <ol id="#scoreList">
+                
+            </ol>
+
+            <button id="goBack" class = "button">Go Back</button>
+            <button id="clear-scores" class = "button">Clear Scores</button>
+        </section>
 
     </main> 
     <script src="./script.js"></script>

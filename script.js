@@ -7,11 +7,17 @@ var scoreDisplay = document.getElementById("#score-container");
 var currentQuestion = document.getElementById("#question");
 var finalScore = document.getElementById("finalScore");
 var initials = document.getElementById("initialsInput");
+var submitInitials = document.getElementById("submit-initials");
 var answerList = document.querySelector("#answerOptions");
 var answer1 = document.getElementById("answerOption1");
 var answer2 = document.getElementById("answerOption2");
 var answer3 = document.getElementById("answerOption3");
 var answer4 = document.getElementById("answerOption4");
+var goToHighScores = document.getElementById("goToHighScores");
+var goBack = document.getElementById("goBack");
+var clearScores = document.getElementById("clear-scores");
+var scoreList = document.getElementById("#score-list");
+var subScoreList = document.getElementById("#scoreList");
 var startTime = 100;
 var questionCounter = 0;
 
@@ -134,11 +140,40 @@ answerList.addEventListener("click", function(event){
 
 // Create a listener to submit the user's initials
 
-initials.addEventListener("submit", function(event) {
-    event.stopPropagation();
-    localStorage.setItem("initials", initials.textContent);
+submitInitials.addEventListener("click", function(init) {
+    init.stopPropagation();
+    var newScore = document.createElement("li");
+    localStorage.setItem("initials", initials.value);
     localStorage.setItem("score", timeLeft);
-    
-})
+    newScore.textContent = localStorage.getItem("initials") + " -- " + localStorage.getItem("score");
+    subScoreList.appendChild(newScore);
+    showHighScores();
+});
 
 // Create a function to populate the high scores list on the highscores page.
+function showHighScores () {
+    // turn off all other sections
+    startDisplay.setAttribute("style", "text-align: center; display: none;");
+    questDisplay.setAttribute("style", "text-align: center; display: none;");
+    scoreDisplay.setAttribute("style", "text-align: center; display: none;");
+
+    // call up the saved scores page
+    
+    scoreList.setAttribute("style", "text-align: center; display: float;");
+}
+
+
+goToHighScores.addEventListener("click", showHighScores);
+
+clearScores.addEventListener("click" , function(event) {
+    event.stopPropagation();
+    while (subScoreList.hasChildNodes()) {  
+        subScoreList.removeChild(subScoreList.firstChild);
+    }
+});
+
+goBack.addEventListener("click" , function(event) {
+    event.stopPropagation();
+    scoreList.setAttribute("style", "text-align: center; display: none;");
+    startDisplay.setAttribute("style", "text-align: center; display: float;");
+});
