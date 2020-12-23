@@ -7,14 +7,17 @@
     <title>Quiz Game!</title>
 </head>
 <body>
-    <!-- Create the link to the high scores page -->
-    <div id="goToHighScores" style="margin-left: 10%; margin-top: 1rem; font-size: large;">View High Scores</div>
-
-    <!-- Create the timer that shows in the top right -->
-    <div id = "#timer" style="float: right; margin-right: 10%; font-size: large;">There are: <span id ="#timeRemaining"></span> seconds left</div>
+    
 
     <main class = "container">
 
+        <!-- Create the link to the high scores page -->
+    <div id="goToHighScores" style="float: left; font-size: large; margin:auto;">View High Scores</div>
+
+    <!-- Create the timer that shows in the top right -->
+    <div id = "#timer" style="float: right; font-size: large; margin: auto;">There are: <span id ="#timeRemaining"></span> seconds left</div>
+
+    <br/>
         <!-- Create the main container where the initial welcome and start button will show -->
         <section class="container" style="text-align: center;" id="#start-container">
             <h1 id = "#header">Coding Quiz Challenge</h1>
@@ -27,7 +30,7 @@
             <!-- show the question as an h2 -->
             <h2 >Question</h2>
             <h3 id="#question">""</h3>
-            <ol id="answerOptions" style = "margin-left: 33%; text-align: left;">
+            <ol id="answerOptions" style = "margin-left: auto; text-align: left;">
                 <li><button id="answerOption1" style = "text-align: left;" value = "1"></button></li>
                 <li><button id="answerOption2" style = "text-align: left;" value = "2"></button></li>
                 <li><button id="answerOption3" style = "text-align: left;" value = "3"></button></li>

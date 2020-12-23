@@ -34,6 +34,9 @@ At this point, the user can either go back to the beginning of the game and play
 
 ## Pseudo Code & Key Code Elements
 
+**HTML Setup**
+
+Begin by creating a high score link and a timer at the top of the page. This area will not change regardless of stage of the 
 
 
 <hr>
