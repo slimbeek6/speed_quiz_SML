@@ -16,7 +16,7 @@
     <main class = "container">
 
         <!-- Create the main container where the initial welcome and start button will show -->
-        <section class="container" style="text-align: center; display: float;" id="#start-container">
+        <section class="container" style="text-align: center;" id="#start-container">
             <h1 id = "#header">Coding Quiz Challenge</h1>
             <p id = "#instructions">Try to answer the following questions as quickly as possible. Wrong answers will reduce score by 10, each second elapsed reduces score by 1. User score is time remaining when all questions have been answered</p>
             <button id = "startGame">Start Quiz</button>
@@ -26,7 +26,7 @@
         <section class = "container" style="text-align: center; display: none;" id = "#question-container">
             <!-- show the question as an h2 -->
             <h2 >Question</h2>
-            <h3 id="#question"></h3>
+            <h3 id="#question">""</h3>
             <ol id="answerOptions" style = "margin-left: 33%; text-align: left;">
                 <li><button id="answerOption1" style = "text-align: left;" value = "1"></button></li>
                 <li><button id="answerOption2" style = "text-align: left;" value = "2"></button></li>
@@ -55,7 +55,7 @@
         <!-- Create a fourth container for the high scores list -->
 
         <section style="text-align: center; display: none;" id="#score-list">
-            <h1 id = "#header">High Scores</h1>
+            <h2>High Scores</h2>
             <ol id="#scoreList">
                 
             </ol>
