@@ -19,7 +19,7 @@ var clearScores = document.getElementById("clear-scores");
 var scoreList = document.getElementById("#score-list");
 var subScoreList = document.getElementById("#scoreList");
 var startTime = 100;
-var questionCounter = 0;
+
 
 // Create list of questions
 var questionList = [
