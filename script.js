@@ -91,7 +91,7 @@ function startGame (event) {
     event.stopPropagation();
     questionIndex = 0;
     timeLeft = startTime;
-    questDisplay.setAttribute("style", "text-align: center; display: float;");
+    questDisplay.setAttribute("style", "text-align: center; display: inline;");
     startDisplay.setAttribute("style", "text-align: center; display: none;");
 
     // Start showing questions
@@ -112,7 +112,7 @@ function startGame (event) {
             finalScore.textContent = timeLeft;
             clearInterval(timeInterval);
             questDisplay.setAttribute("style", "text-align: center; display: none;");
-            scoreDisplay.setAttribute("style", "text-align: center; display: float;");
+            scoreDisplay.setAttribute("style", "text-align: center; display: inline;");
         }
 
     }, 1000);
@@ -160,7 +160,7 @@ function showHighScores () {
 
     // call up the saved scores page
     
-    scoreList.setAttribute("style", "text-align: center; display: float;");
+    scoreList.setAttribute("style", "text-align: center; display: inline;");
 }
 
 
@@ -176,5 +176,5 @@ clearScores.addEventListener("click" , function(event) {
 goBack.addEventListener("click" , function(event) {
     event.stopPropagation();
     scoreList.setAttribute("style", "text-align: center; display: none;");
-    startDisplay.setAttribute("style", "text-align: center; display: float;");
+    startDisplay.setAttribute("style", "text-align: center; display: inline;");
 });

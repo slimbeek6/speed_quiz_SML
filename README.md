@@ -36,7 +36,11 @@ At this point, the user can either go back to the beginning of the game and play
 
 **HTML Setup**
 
-Begin by creating a high score link and a timer at the top of the page. This area will not change regardless of stage of the 
+Begin by creating a high score link and a timer at the top of the container. This area will not change regardless of stage of the game that is being shown below.
+
+Then create 4 distinct sections with four IDs (Start, Quiz, End, High Scores) to provide these four different elements to show when their part of the game is ready to be presented.
+
+Within the first section, which is 
 
 
 <hr>
