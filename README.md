@@ -55,7 +55,7 @@ Next create the End section, which will show the user their score, as well as pr
 
 Finally create the High Scores section, which will be the high scores list with all the scores previously submitted in the end section, as well as a button to navigate back to the Start section, and a button that clears the high scores list.
 
-After this work is done, make sure to link out to the javascript document!
+After this work is done, make sure to link out to the javascript document, and ensure all the sections other than the Start section to include a style that hides them until they are called, using the display: none style.
 
 **Initial Javascript Setup**
 
@@ -98,7 +98,23 @@ var questionList = [
         ca: "4"
     },
 ```
+Finally define a timer variable, a starting amount of time, and a question index to be able to call the right questions.
 
+**Display Function**
+
+Create a display function, which references each section of the Quiz page, and adds the correct question information to each element, including the question being asked, and the answer options.  The correct question information should be coming from the question list array.
+
+```
+function displayQuestion(){
+    currentQuestion.textContent = questionList[questionIndex].q;
+    answer1.textContent = questionList[questionIndex].a1;
+    answer2.textContent = questionList[questionIndex].a2;
+    answer3.textContent = questionList[questionIndex].a3;
+    answer4.textContent = questionList[questionIndex].a4;
+}
+```
+
+****
 
 
 <hr>

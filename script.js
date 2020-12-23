@@ -94,20 +94,15 @@ function startGame (event) {
     questDisplay.setAttribute("style", "text-align: center; display: inline;");
     startDisplay.setAttribute("style", "text-align: center; display: none;");
 
-    // Start showing questions
+    // Start by showing the first question
         displayQuestion();
-        
-
-        // once answer chosen, return a right or wrong, and increment questionIndex, then re-print the questions and answers.
-        // add in an if statement that ends the game if the questionIndex equals questionList.length or timer is 0
-    
 
     // Create interval function to countdown the timer
     var timeInterval = setInterval(function() {
         timeShown.textContent = timeLeft;
         timeLeft--;
 
-        // End game if time is 0
+        // End game if time is 0 or the player has answered all of the questions
         if (timeLeft === 0 || questionIndex === questionList.length) {
             finalScore.textContent = timeLeft;
             clearInterval(timeInterval);
@@ -117,8 +112,6 @@ function startGame (event) {
 
     }, 1000);
 }
-
-console.log(localStorage.getItem("score"));
 
 // Create a listener to run the startGame function when the button is pressed
 
