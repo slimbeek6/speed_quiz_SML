@@ -89,6 +89,7 @@ function displayQuestion(){
 // Create a function to contain and run the full quiz
 function startGame (event) {
     event.stopPropagation();
+    questionIndex = 0;
     timeLeft = startTime;
     questDisplay.setAttribute("style", "text-align: center; display: float;");
     startDisplay.setAttribute("style", "text-align: center; display: none;");
