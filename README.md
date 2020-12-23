@@ -114,7 +114,103 @@ function displayQuestion(){
 }
 ```
 
-****
+*We define this first, so we can call it in the game function.*
+
+**Game Function**
+
+Now we need to create the main game function, which starts once the button on the start page is clicked. This is achieved using an event listener:
+```
+startBtn.addEventListener("click", startGame);
+```
+
+In our game function, we need to set the question index back to zero, to make sure that it starts from the first question, while also setting the timer to the standard starting amount.
+
+Next we hide the Start section from the DOM and unhide the Quiz section of the game, update the question display, and start the timer.
+
+Once this is done, we create an if statement to search for the end of the game, either the timer is zero or all of the questions have been answered.
+
+Key code:
+```
+    questionIndex = 0;
+    timeLeft = startTime;
+   
+    questDisplay.setAttribute("style", "text-align: center; display: inline;");
+    startDisplay.setAttribute("style", "text-align: center; display: none;");
+   
+    displayQuestion();
+
+    var timeInterval = setInterval(function() {
+        timeShown.textContent = timeLeft;
+        timeLeft--;
+
+        if (timeLeft === 0 || questionIndex === questionList.length) {
+            finalScore.textContent = timeLeft;
+            clearInterval(timeInterval);
+            questDisplay.setAttribute("style", "text-align: center; display: none;");
+            scoreDisplay.setAttribute("style", "text-align: center; display: inline;");
+        }
+    }, 1000);
+```
+
+The next step is to create listener for the response from the user, which tells the user whether they were right or not, while subtracting 10 seconds for a wrong answer or none for a right answer and displaying the next question.
+```
+answerList.addEventListener("click", function(event){
+    var answer = event.target.value;
+    if (answer == questionList[questionIndex].ca) {
+        answerCheck.textContent = "Correct!";
+    }
+    else {
+        answerCheck.textContent = "Wrong!";
+        timeLeft = timeLeft - 10;
+    }
+    questionIndex++;
+    displayQuestion();
+});
+```
+
+This will repeat until the question hits the last question, which will need to prompt the engame display.
+
+
+**Endgame Display and Input**
+
+When the endgame is displayed due to the time running out or the last question being answered, we need to update the score displayed on the page by pulling down the number on the timer at the time that the game ended.
+
+On the endgame display there is an input field and a submit button, which will need to save into a high scores list, and display that list.
+
+```
+submitInitials.addEventListener("click", function(init) {
+    init.stopPropagation();
+    var newScore = document.createElement("li");
+    localStorage.setItem("initials", initials.value);
+    localStorage.setItem("score", timeLeft);
+    newScore.textContent = localStorage.getItem("initials") + " -- " + localStorage.getItem("score");
+    subScoreList.appendChild(newScore);
+    showHighScores();
+});
+```
+
+**The High Scores List**
+
+Finally you need to create a function that turns on the high scores section of the DOM, and turns off the engame display.
+
+This function will be tied to the link in the top left of all the pages. It will also display automatically when the user clicks submit after entering their initials.
+
+After the high scores have been written, there needs to be functionality added to the go back button, which shows the Start page, and the clear scores button. This is done by adding listeners to the buttons, and adding in functions that those buttons start.
+
+```
+clearScores.addEventListener("click" , function(event) {
+    event.stopPropagation();
+    while (subScoreList.hasChildNodes()) {  
+        subScoreList.removeChild(subScoreList.firstChild);
+    }
+});
+
+goBack.addEventListener("click" , function(event) {
+    event.stopPropagation();
+    scoreList.setAttribute("style", "text-align: center; display: none;");
+    startDisplay.setAttribute("style", "text-align: center; display: inline;");
+});
+```
 
 
 <hr>
